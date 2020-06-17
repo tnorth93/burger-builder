@@ -26,6 +26,8 @@ class BurgerBuilder extends Component {
     totalPrice: 3,
   }
 
+  
+
   addIngredientHandler = (type) => {
     const oldCount = this.state.ingredients[type];
     const updatedCount = oldCount + 1;
