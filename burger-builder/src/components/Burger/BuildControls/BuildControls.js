@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './BuildControls.nodule.css';
+import classes from './BuildControls.module.css';
 import BuildControl from './BuildControl/BuildControl';
 
 const controls = [
