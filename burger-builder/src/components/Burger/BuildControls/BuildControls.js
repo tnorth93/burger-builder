@@ -1,8 +1,10 @@
 import React from 'react';
 
 
-const buildControls = (props) => {
-  return()
-}
+const buildControls = (props) => (
+  <div>
+    
+  </div>
+)
 
 export default buildControls;
