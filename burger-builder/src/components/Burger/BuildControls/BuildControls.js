@@ -21,7 +21,7 @@ const buildControls = (props) => (
         removed={()=> props.ingredientRemoved(ctrl.type)}
         disabled={props.disabled[ctrl.type]} />
     ))}
-    <button>SUBMIT ORDER</button>
+    <button className={classes.OrderButton}>SUBMIT ORDER</button>
   </div>
 )
 
