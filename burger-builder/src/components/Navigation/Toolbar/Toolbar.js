@@ -5,7 +5,7 @@ const toolbar = (props) => (
     <div>Menu</div>
     <div>Logo</div>
     <nav>
-      <ul></ul>
+      ...
     </nav>
   </header>
 )
