@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 
-import Aux from '../../../hoc/Auxiliary';
+import Aux from '../../../hoc/Auxiliary/Auxiliary';
 import Button from '../../UI/Button/Button';
 
 class OrderSummary extends Component {
+  // This can be a functional component, is class based solely for lifecycle hook demo
   componentDidUpdate() {
     console.log('[OrderSummary] DidUpate');
   };
-  
+
   render () {
 
     const ingredientSummary = Object.keys(this.props.ingredients)
