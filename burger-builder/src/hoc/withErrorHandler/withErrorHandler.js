@@ -7,7 +7,7 @@ const withErrorHandler = (WrappedComponent) => {
   return (props) => {
     return (
       <Aux>
-        <Modal>
+        <Modal show>
           Something didn't work
         </Modal>
         <WrappedComponent {...props} />
