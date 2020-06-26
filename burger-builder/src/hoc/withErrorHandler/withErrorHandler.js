@@ -6,6 +6,9 @@ import Aux from '../../hoc/Auxiliary/Auxiliary';
 const withErrorHandler = (WrappedComponent, axios) => {
   return class extends Component {
   componentDidMount () {
+    axios.interceptors.request.use(req => {
+      this.setState({error: null});
+    })
     axios.interceptors.response.use(null, error => {
       this.setState({error: error});
     });
@@ -14,8 +17,8 @@ const withErrorHandler = (WrappedComponent, axios) => {
     render() {
       return (
         <Aux>
-          <Modal show>
-          Something didn't work
+          <Modal show={this.state.error}>
+            {this.state.error.message}
           </Modal>
           <WrappedComponent {...this.props} />
         </Aux>
