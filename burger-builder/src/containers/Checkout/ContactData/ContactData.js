@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Button from '../../../components/UI/Button/Button';
 import classes from './ContactData.module.css';
+import axios from '../../../axios-orders';
 
 class ContactData extends Component {
   state = {
@@ -18,8 +19,8 @@ class ContactData extends Component {
     event.preventDefault();
     this.setState({loading: true});
     const order = {
-      ingredients: this.state.ingredients,
-      price: this.state.totalPrice,
+      ingredients: this.props.ingredients,
+      price: this.props.price,
       customer: {
         name: 'Tom North',
         address: {
@@ -33,10 +34,10 @@ class ContactData extends Component {
     }
     axios.post('/orders.jsonn', order)
       .then(response => {
-        this.setState({loading: false, purchasing: false})
+        this.setState({loading: false})
       })
       .catch(error => {
-        this.setState({loading: false, purchasing: false})
+        this.setState({loading: false})
       });
   }
 
