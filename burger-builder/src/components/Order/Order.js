@@ -1,7 +1,9 @@
 import React from 'react';
 
+import classes from './Order.module.css';
+
 const order = (props) => (
-  <div>
+  <div className={classes.Order}>
     <p>Ingredients: </p>
   </div>
 );
