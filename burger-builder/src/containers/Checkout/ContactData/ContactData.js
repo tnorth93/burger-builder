@@ -33,7 +33,7 @@ class ContactData extends Component {
       },
       deliveryMethod: 'ASAP',
     }
-    axios.post('/orders.jsonn', order)
+    axios.post('/orders.json', order)
       .then(response => {
         this.setState({loading: false});
         this.props.history.push('/');

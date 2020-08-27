@@ -5,7 +5,10 @@ import Order from '../../components/Order/Order';
 class Orders extends Component {
   render () {
     return (
-      <div></div>
+      <div>
+        <Order />
+        <Order />
+      </div>
     );
   }
 }
