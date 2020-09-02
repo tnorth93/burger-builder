@@ -84,7 +84,7 @@ class ContactData extends Component {
   render () {
     let form = (
       <form>
-        <Input inputtype="input" name="name" placeholder="Name" />
+        <Input elementType="..." elementConfig="..." value="..." />
         <Input inputtype="input" name="email" placeholder="Email" />
         <Input inputtype="input" name="street" placeholder="Street" />
         <Input inputtype="input" name="postal" placeholder="Postal Code" />
