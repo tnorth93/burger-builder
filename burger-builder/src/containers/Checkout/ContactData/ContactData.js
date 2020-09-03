@@ -16,6 +16,10 @@ class ContactData extends Component {
           placeholder: 'Your Name',
         },
         value: '',
+        validation: {
+          required: true,
+        },
+        valid: false,
       },
       street: {
         elementType: 'input',
@@ -23,7 +27,11 @@ class ContactData extends Component {
           type: 'text',
           placeholder: 'Street',
         },
-        value: ''
+        value: '',
+        validation: {
+          required: true,
+        },
+        valid: false,
       },
       zipCode: {
         elementType: 'input',
@@ -31,7 +39,11 @@ class ContactData extends Component {
           type: 'text',
           placeholder: 'Zip Code',
         },
-        value: ''
+        value: '',
+        validation: {
+          required: true,
+        },
+        valid: false,
       },
       country: {
         elementType: 'input',
@@ -39,7 +51,11 @@ class ContactData extends Component {
           type: 'text',
           placeholder: 'Country',
         },
-        value: ''
+        value: '',
+        validation: {
+          required: true,
+        },
+        valid: false,
       },
       email: {
         elementType: 'input',
@@ -47,7 +63,11 @@ class ContactData extends Component {
           type: 'email',
           placeholder: 'E-Mail',
         },
-        value: ''
+        value: '',
+        validation: {
+          required: true,
+        },
+        valid: false,
       },
       deliveryMethod: {
         elementType: 'select',
@@ -57,7 +77,7 @@ class ContactData extends Component {
             {value: 'cheapest', displayValue: 'Cheapest'},
           ]
         },
-        value: ''
+        value: '',
       }
     },
     loading: false,
@@ -83,6 +103,10 @@ class ContactData extends Component {
       .catch(error => {
         this.setState({loading: false})
       });
+  }
+
+  checkValidity(value, rules) {
+
   }
 
   inputChangedHandler = (event, inputIdentifier) => {
