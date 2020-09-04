@@ -85,6 +85,7 @@ class ContactData extends Component {
           ]
         },
         value: '',
+        valid: true,
       }
     },
     formIsValid: false,
@@ -171,7 +172,7 @@ class ContactData extends Component {
             touched={formElement.config.touched}
             changed={(event) => this.inputChangedHandler(event, formElement.id)} />
         ))}
-        <Button btnType="Success" clicked={this.orderHandler}>ORDER</Button>
+        <Button btnType="Success" disabled={!this.state.formIsValid} clicked={this.orderHandler}>ORDER</Button>
       </form>);
     if (this.state.loading) {
       form = <Spinner />
