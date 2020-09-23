@@ -19,15 +19,15 @@ class Checkout extends Component {
     return (
       <div>
         <CheckoutSummary
-          ingredients={this.state.ingredients}
+          ingredients={this.props.ings}
           checkoutCancelled={this.checkoutCancelledHandler}
           checkoutContinued={this.checkoutContinuedHandler}/>
         <Route
           path={this.props.match.path + '/contact-data'}
           // component={ContactData}
           // Using render instead of component to send ingredients as a prop
-          render={(props) => (<ContactData ingredients={this.state.ingredients} price={this.state.totalPrice} {...props}/>)} 
-          />
+          // render={(props) => (<ContactData ingredients={this.props.ings} price={this.props.price} {...props}/>)}
+          component={ContactData} />
       </div>
     )
   }
@@ -36,7 +36,6 @@ class Checkout extends Component {
 const mapStateToProps = (state) => {
   return {
     ings: state.ingredients,
-    price: state.totalPrice,
   }
 }
 
