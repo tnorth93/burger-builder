@@ -23,11 +23,15 @@ export const setIngredients = (ingredients) => {
   };
 }
 
+export const fetchIngredientsFailed = () => {
+  
+}
+
 export const initIngredients = () => {
   return dispatch => {
     axios.get('https://react-my-burger-f8687.firebaseio.com/ingredients.json')
       .then(response => {
-        dispatch(setIngredients());
+        dispatch(setIngredients(response.data));
       })
       .catch(error => {
         this.setState({error: true})
