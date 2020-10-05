@@ -19,23 +19,21 @@ class Checkout extends Component {
     let summary = <Redirect to="/"/>
     if (this.props.ings) {
       summary = (
-        <CheckoutSummary
-          ingredients={this.props.ings}
-          checkoutCancelled={this.checkoutCancelledHandler}
-          checkoutContinued={this.checkoutContinuedHandler}/>
+        <div>
+          <CheckoutSummary
+            ingredients={this.props.ings}
+            checkoutCancelled={this.checkoutCancelledHandler}
+            checkoutContinued={this.checkoutContinuedHandler}/>
+          <Route
+            path={this.props.match.path + '/contact-data'}
+            // component={ContactData}
+            // Using render instead of component to send ingredients as a prop
+            // render={(props) => (<ContactData ingredients={this.props.ings} price={this.props.price} {...props}/>)}
+            component={ContactData} />
+        </div>
       );
     }
-    return (
-      <div>
-        {summary}
-        <Route
-          path={this.props.match.path + '/contact-data'}
-          // component={ContactData}
-          // Using render instead of component to send ingredients as a prop
-          // render={(props) => (<ContactData ingredients={this.props.ings} price={this.props.price} {...props}/>)}
-          component={ContactData} />
-      </div>
-    )
+    return summary;
   }
 }
 
