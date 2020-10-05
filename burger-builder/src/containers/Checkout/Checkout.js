@@ -4,8 +4,13 @@ import { connect } from 'react-redux';
 
 import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSummary';
 import ContactData from '../Checkout/ContactData/ContactData';
+import * as actions from '../../store/actions';
 
 class Checkout extends Component {
+
+  componentWilldMount () {
+    this.props.onInitPurchase();
+  }
   
   checkoutCancelledHandler = () => {
     this.props.history.goBack();
@@ -40,7 +45,13 @@ class Checkout extends Component {
 const mapStateToProps = (state) => {
   return {
     ings: state.burgerBuilder.ingredients,
-  }
-}
+  };
+};
 
-export default connect(mapStateToProps)(Checkout);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onInitPurchase: () => dispatch(actions.purchaseInit()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Checkout);
