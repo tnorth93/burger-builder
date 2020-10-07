@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import axios from '../../axios-orders';
 import Order from '../../components/Order/Order';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
+import * as actions from '../../store/actions/index';
 
 class Orders extends Component {
   state = {
@@ -40,6 +41,12 @@ class Orders extends Component {
       </div>
     );
   }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onFetchOrders: () => dispatch(actions.fetchOrders())
+  };
 }
 
 export default withErrorHandler(Orders, axios);
