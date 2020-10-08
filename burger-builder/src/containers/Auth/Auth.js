@@ -58,11 +58,13 @@ class Auth extends Component {
         touched={formElement.config.touched}
         changed={(event) => this.inputChangedHandler(event, formElement.id)}
       />
-    ))
+    ));
+
     return (
       <div>
         <form>
-
+          {form}
+          <Button btnType='Success'>SUBMIT</Button>
         </form>
       </div>
     );
