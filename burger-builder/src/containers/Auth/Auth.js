@@ -70,9 +70,11 @@ class Auth extends Component {
       [controlName]: {
         ...this.state.controls[controlName],
         value: event.target.value,
-        valid: this.checkValidity(event.target.value, this.state.controls[controlName].value);
+        valid: this.checkValidity(event.target.value, this.state.controls[controlName].value),
+        touched: true,
       }
-    }
+    };
+    this.setState({controls: updatedControls});
   }
 
   render() {
@@ -98,7 +100,7 @@ class Auth extends Component {
     ));
 
     return (
-      <div class={classes.Auth}>
+      <div className={classes.Auth}>
         <form>
           {form}
           <Button btnType='Success'>SUBMIT</Button>
