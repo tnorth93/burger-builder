@@ -29,7 +29,7 @@ export const auth = (email, password) => {
       password: password,
       returnSecureToken: true,
     };
-    axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken?key=AIzaSyBmI5gFv_Ja94g6ZEhD-SQEuOH2xw4ipr0', authData)
+    axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBmI5gFv_Ja94g6ZEhD-SQEuOH2xw4ipr0', authData)
       .then(response => {
         console.log(response);
         dispatch(authSuccess(response.data));
