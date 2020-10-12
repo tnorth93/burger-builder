@@ -24,4 +24,4 @@ export const auth = (email, password) => {
   return dispatch => {
     dispatch(authStart());
   };
-}
+};
