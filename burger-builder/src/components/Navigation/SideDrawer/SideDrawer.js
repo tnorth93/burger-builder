@@ -16,7 +16,6 @@ const sideDrawer = (props) => {
   
   return (
     <Aux>
-      <p>yo</p>
       <Backdrop
         show={props.status}
         clicked={props.toggled}/>
