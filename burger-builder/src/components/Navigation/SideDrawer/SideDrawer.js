@@ -13,8 +13,10 @@ const sideDrawer = (props) => {
     attachedClasses = [classes.SideDrawer, classes.Open];
   }
 
+  
   return (
     <Aux>
+      <p>yo</p>
       <Backdrop
         show={props.status}
         clicked={props.toggled}/>
