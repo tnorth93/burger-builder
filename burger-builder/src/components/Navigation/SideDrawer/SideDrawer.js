@@ -13,7 +13,6 @@ const sideDrawer = (props) => {
     attachedClasses = [classes.SideDrawer, classes.Open];
   }
 
-  check
   return (
     <Aux>
       <Backdrop
