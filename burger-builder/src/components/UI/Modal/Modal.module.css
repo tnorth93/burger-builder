@@ -12,6 +12,14 @@
   transition: all 0.3s ease-out;
 }
 
+.ModalOpen {
+  display: block;
+}
+
+.ModalClosed {
+  display: none;
+}
+
 @media (min-width: 600px) {
   .Modal {
       width: 500px;
