@@ -9,9 +9,11 @@
 }
 
 .BackdropOpen {
-  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .BackdropClosed {
-  display: none
+  opacity: 0;
+  transform: translateY(-100%);
 }
