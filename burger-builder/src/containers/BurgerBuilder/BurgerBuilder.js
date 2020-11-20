@@ -91,9 +91,10 @@ export class BurgerBuilder extends Component {
 
     return (
       <Aux>
-        <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
+        {/* <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}> */}
+        {this.state.purchasing ? <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
           {orderSummary}
-        </Modal>
+        </Modal> : null}
         {burger}
       </Aux>
     );

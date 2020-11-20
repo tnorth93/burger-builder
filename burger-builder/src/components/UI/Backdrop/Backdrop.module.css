@@ -7,3 +7,13 @@
   top: 0;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+.BackdropOpen {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.BackdropClosed {
+  opacity: 0;
+  transform: translateY(-100%);
+}
