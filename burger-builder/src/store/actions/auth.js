@@ -7,7 +7,7 @@ export const authStart = () => {
   };
 };
 
-const authSuccess = (token, userId) => {
+export const authSuccess = (token, userId) => {
   return {
     type: actionTypes.AUTH_SUCCESS,
     idToken: token,
@@ -15,7 +15,7 @@ const authSuccess = (token, userId) => {
   };
 };
 
-const authFail = (error) => {
+export const authFail = (error) => {
   return {
     type: actionTypes.AUTH_FAIL,
     error: error,
