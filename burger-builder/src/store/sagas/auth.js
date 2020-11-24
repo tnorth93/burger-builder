@@ -1,5 +1,4 @@
-import{ delay } from 'redux-saga';
-import { put } from 'redux-saga/effects';
+import { delay, put } from 'redux-saga';
 import axios from 'axios';
 
 import * as actions from '../actions/index';
