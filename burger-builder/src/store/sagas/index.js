@@ -14,3 +14,7 @@ export function* watchAuth() {
 export function* watchBurgerBuilder() {
   yield takeEvery(actionTypes.INIT_INGREDIENTS, initIngredientsSaga);
 }
+
+export function *watchOrder() {
+  yield takeEvery(actionTypes.PURCHASE_BURGER
+}
