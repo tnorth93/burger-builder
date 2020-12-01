@@ -12,3 +12,7 @@ export function* purchaseBurgerSaga(action) {
     yield put(actions.purchaseBurgerFail(error));
   }
 }
+
+export function* fetchOrdersSaga(action) {
+  
+}
