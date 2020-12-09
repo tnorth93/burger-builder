@@ -20,9 +20,9 @@ const asyncAuth = asyncComponent(() => {
   return import('./containers/Auth/Auth')
 });
 
-const app = (props) => {
+const App = props => {
   useEffect(() => {
-    this.props.onTryAutoSignup();
+    props.onTryAutoSignup();
   }, []);
 
     let routes = (
@@ -53,7 +53,7 @@ const app = (props) => {
         </Layout>
       </div>
     );
-  }
+}
 
 
 const mapStateToProps = state => {
@@ -68,4 +68,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(app));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
