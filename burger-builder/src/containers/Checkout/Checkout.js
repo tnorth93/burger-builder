@@ -5,38 +5,36 @@ import { connect } from 'react-redux';
 import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSummary';
 import ContactData from '../Checkout/ContactData/ContactData';
 
-class Checkout extends Component {
+const Checkout = (props) => {
   
-  checkoutCancelledHandler = () => {
-    this.props.history.goBack();
+  const checkoutCancelledHandler = () => {
+    props.history.goBack();
   }
 
-  checkoutContinuedHandler = () => {
-    this.props.history.replace('/checkout/contact-data');
+  const checkoutContinuedHandler = () => {
+    props.history.replace('/checkout/contact-data');
   }
 
-  render () {
     let summary = <Redirect to="/"/>
-    if (this.props.ings) {
-      const purchasedRedirect = this.props.purchased ? <Redirect to="/" /> : null;
+    if (props.ings) {
+      const purchasedRedirect = props.purchased ? <Redirect to="/" /> : null;
       summary = (
         <div>
           {purchasedRedirect}
           <CheckoutSummary
-            ingredients={this.props.ings}
-            checkoutCancelled={this.checkoutCancelledHandler}
-            checkoutContinued={this.checkoutContinuedHandler}/>
+            ingredients={props.ings}
+            checkoutCancelled={checkoutCancelledHandler}
+            checkoutContinued={checkoutContinuedHandler}/>
           <Route
-            path={this.props.match.path + '/contact-data'}
+            path={props.match.path + '/contact-data'}
             // component={ContactData}
             // Using render instead of component to send ingredients as a prop
-            // render={(props) => (<ContactData ingredients={this.props.ings} price={this.props.price} {...props}/>)}
+            // render={(props) => (<ContactData ingredients={props.ings} price={props.price} {...props}/>)}
             component={ContactData} />
         </div>
       );
     }
     return summary;
-  }
 }
 
 const mapStateToProps = (state) => {
