@@ -14,7 +14,7 @@ const Layout = props => {
   }
 
   const sideDrawerToggleHandler = () => {
-    setSideDrawerIsVisible(!setSideDrawerIsVisible);
+    setSideDrawerIsVisible(!sideDrawerIsVisible);
   }
 
     return (
@@ -27,7 +27,7 @@ const Layout = props => {
           open={sideDrawerIsVisible}
           closed={sideDrawerClosedHandler} />
         <main className={classes.Content}>
-          {this.props.children}
+          {props.children}
         </main>
       </Aux>
     )
