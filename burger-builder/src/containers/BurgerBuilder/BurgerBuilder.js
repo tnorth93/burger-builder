@@ -85,7 +85,7 @@ const BurgerBuilder = props => {
     return (
       <Aux>
         {/* <Modal show={state.purchasing} modalClosed={purchaseCancelHandler}> */}
-        {state.purchasing ? <Modal show={state.purchasing} modalClosed={purchaseCancelHandler}>
+        {purchasing ? <Modal show={purchasing} modalClosed={purchaseCancelHandler}>
           {orderSummary}
         </Modal> : null}
         {burger}
