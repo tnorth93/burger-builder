@@ -66,7 +66,7 @@ const Auth = props => {
   };
 
   const switchAuthModeHandler = () => {
-    setIsSignup(!isSignUp);
+    setIsSignup(!isSignup);
   };
 
   const formElementsArray = [];
