@@ -22,4 +22,6 @@ export default httpClient => {
   const errorConfirmedHandler = () => {
     setError(null);
   }
+
+  return [error, errorConfirmedHandler]
 }
