@@ -9,13 +9,13 @@ const sideDrawer = (props) => {
 
   let attachedClasses =[classes.SideDrawer, classes.Close];
   
-  if (props.status) {
+  if (props.open) {
     attachedClasses = [classes.SideDrawer, classes.Open];
   }
 
   return (
     <Aux>
-      <Backdrop show={props.status} clicked={props.toggled}/>
+      <Backdrop show={props.open} clicked={props.toggled}/>
       <div className={attachedClasses.join(' ')} onClick={props.closed}>
         <div className={classes.Logo}>
           <Logo/>

@@ -8,7 +8,7 @@ const toolbar = (props) => (
   <header className={classes.Toolbar}>
     <DrawerToggle
       show={props.status}
-      clicked={props.drawerToggleClickedHandler}/>
+      clicked={props.drawerToggleClicked}/>
     <div className={classes.Logo}>
       <Logo/>
     </div>
