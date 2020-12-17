@@ -44,7 +44,7 @@ const BurgerBuilder = props => {
   }
 
   const purchaseHandler= () => {
-    if (props.isAuthenticated) {
+    if (isAuthenticated) {
       setPurchasing(true);
     } else {
       onSetAuthRedirectPath('/checkout');
@@ -62,7 +62,7 @@ const BurgerBuilder = props => {
   }
 
     const disabledInfo = {
-      ...props.ings
+      ...ings
     };
 
     for (let key in disabledInfo) {
@@ -71,26 +71,26 @@ const BurgerBuilder = props => {
 
     let orderSummary = null;
 
-    let burger = props.error ? <p>Ingredients cannot be loaded</p> : <Spinner />;
+    let burger = error ? <p>Ingredients cannot be loaded</p> : <Spinner />;
 
-    if (props.ings) {
+    if (ings) {
       burger = (
         <Aux>
-          <Burger ingredients={props.ings} />
+          <Burger ingredients={ings} />
           <BuildControls
             ingredientAdded={onIngredientAdded}
             ingredientRemoved={onIngredientRemoved}
             disabled={disabledInfo}
-            purchasable={updatePurchaseState(props.ings)}
+            purchasable={updatePurchaseState(ings)}
             ordered={purchaseHandler}
-            price={props.price}
-            isAuth={props.isAuthenticated}/>
+            price={price}
+            isAuth={isAuthenticated}/>
         </Aux>
       );
       orderSummary = (
         <OrderSummary
-        ingredients={props.ings}
-        price={props.price}
+        ingredients={ings}
+        price={price}
         purchaseCanceled={purchaseCancelHandler}
         purchaseContinued={purchaseContinueHandler}/>
       );
