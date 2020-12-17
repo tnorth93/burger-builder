@@ -16,6 +16,11 @@ const BurgerBuilder = props => {
 
   const dispatch = useDispatch();
 
+  const ings = useSelector(state => state.burgerBuilder.ingredients);
+  const price = useSelector(state => state.burgerBuilder.totalPrice);
+  const error = useElector(state => state.burgerBuilder.error);
+  const isAuthenticated = useSelector(state => state.auth.token !== null);
+
   const onIngredientAdded = ingName => dispatch(actions.addIngredient(ingName));
   const onIngredientRemoved = ingName => dispatch(actions.removeIngredient(ingName));
   const onInitIngredients = () => dispatch(actions.initIngredients());
@@ -102,20 +107,4 @@ const BurgerBuilder = props => {
     );
 }
 
-const mapStateToProps = state => {
-  return {
-    ings: state.burgerBuilder.ingredients,
-    price: state.burgerBuilder.totalPrice,
-    error: state.burgerBuilder.error,
-    isAuthenticated: state.auth.token !== null,
-  }
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    
-  }
-}
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(BurgerBuilder, axios));
+export default withErrorHandler(BurgerBuilder, axios);
